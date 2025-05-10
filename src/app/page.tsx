@@ -1,103 +1,136 @@
 import Image from "next/image";
+import Link from "next/link";
+import Navigation from '@/components/Navigation';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Navigation />
+      <main className="min-h-screen bg-white dark:bg-gray-900">
+        {/* Hero Section */}
+        <section className="relative flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 pb-8 sm:pb-12">
+          <div className="max-w-7xl mx-auto w-full text-center">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight">
+              Quick Noter
+              <span className="block text-blue-500">Your Minimalist Note-Taking Companion</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
+              A modern, secure, and beautiful note-taking application that helps you capture your thoughts instantly.
+            </p>
+            <div className="flex flex-col items-center gap-2 mt-8">
+              <Link 
+                href="#"
+                className="flex items-center gap-3 px-10 py-4 bg-black text-white text-lg font-semibold rounded-full shadow-lg hover:bg-gray-900 transition-colors"
+                style={{ minWidth: 280, justifyContent: 'center' }}
+              >
+                <span className="w-7 h-7 flex items-center justify-center">
+                  {/* Chrome SVG */}
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+                    <path fill="#4caf50" d="M44,24c0,11.044-8.956,20-20,20S4,35.044,4,24S12.956,4,24,4S44,12.956,44,24z"></path><path fill="#ffc107" d="M24,4v20l8,4l-8.843,16c0.317,0,0.526,0,0.843,0c11.053,0,20-8.947,20-20S35.053,4,24,4z"></path><path fill="#4caf50" d="M44,24c0,11.044-8.956,20-20,20S4,35.044,4,24S12.956,4,24,4S44,12.956,44,24z"></path><path fill="#ffc107" d="M24,4v20l8,4l-8.843,16c0.317,0,0.526,0,0.843,0c11.053,0,20-8.947,20-20S35.053,4,24,4z"></path><path fill="#f44336" d="M41.84,15H24v13l-3-1L7.16,13.26H7.14C10.68,7.69,16.91,4,24,4C31.8,4,38.55,8.48,41.84,15z"></path><path fill="#dd2c00" d="M7.158,13.264l8.843,14.862L21,27L7.158,13.264z"></path><path fill="#558b2f" d="M23.157,44l8.934-16.059L28,25L23.157,44z"></path><path fill="#f9a825" d="M41.865,15H24l-1.579,4.58L41.865,15z"></path><path fill="#fff" d="M33,24c0,4.969-4.031,9-9,9s-9-4.031-9-9s4.031-9,9-9S33,19.031,33,24z"></path><path fill="#2196f3" d="M31,24c0,3.867-3.133,7-7,7s-7-3.133-7-7s3.133-7,7-7S31,20.133,31,24z"></path>
+                  </svg>
+                </span>
+                Add to Chrome
+              </Link>
+              <div className="mt-2 text-base text-gray-800 dark:text-gray-200 text-center">
+                Also available for
+                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Chrome</Link>,
+                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Edge</Link>,
+                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Opera</Link>
+              </div>
+            </div>
+            {/* Enhanced Screenshot Mockup */}
+            <div className="flex justify-center mt-10 sm:mt-16 w-full">
+              <Image
+                src="/quicknoter-screenshot.png"
+                alt="Quick Noter Screenshot"
+                width={1200}
+                height={700}
+                className="rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 w-full max-w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl h-auto object-contain"
+                priority
+              />
+            </div>
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/* Features Section */}
+        <section id="features" className="py-12 sm:py-20 bg-gray-50 dark:bg-gray-800">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 dark:text-white mb-8 sm:mb-12">
+              Powerful Features for Modern Note-Taking
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {/* Feature 1 */}
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg">
+                <div className="text-blue-500 text-xl sm:text-2xl mb-3">📝</div>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">Rich Text Editing</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
+                  Format your notes with ease using our comprehensive text editing tools.
+                </p>
+              </div>
+
+              {/* Feature 2 */}
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg">
+                <div className="text-blue-500 text-xl sm:text-2xl mb-3">🔒</div>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">PIN Protection</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
+                  Keep your sensitive notes secure with PIN protection.
+                </p>
+              </div>
+
+              {/* Feature 3 */}
+              <div className="bg-white dark:bg-gray-700 p-4 sm:p-6 rounded-lg shadow-lg">
+                <div className="text-blue-500 text-xl sm:text-2xl mb-3">🌓</div>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white mb-1 sm:mb-2">Dark/Light Mode</h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base">
+                  Choose your preferred theme for comfortable note-taking.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Download Section */}
+        <section id="download" className="py-12 sm:py-20">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8 text-center">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-6 sm:mb-8">
+              Ready to Start Taking Notes?
+            </h2>
+            <p className="text-base sm:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8">
+              Download Quick Noter now and experience the future of note-taking.
+            </p>
+            <div className="flex flex-col items-center gap-2">
+              <Link 
+                href="#"
+                className="flex items-center gap-3 px-10 py-4 bg-black text-white text-lg font-semibold rounded-full shadow-lg hover:bg-gray-900 transition-colors"
+                style={{ minWidth: 280, justifyContent: 'center' }}
+              >
+                <span className="w-7 h-7 flex items-center justify-center">
+                  {/* Chrome SVG */}
+                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="28" height="28" viewBox="0 0 48 48">
+                    <path fill="#4caf50" d="M44,24c0,11.044-8.956,20-20,20S4,35.044,4,24S12.956,4,24,4S44,12.956,44,24z"></path><path fill="#ffc107" d="M24,4v20l8,4l-8.843,16c0.317,0,0.526,0,0.843,0c11.053,0,20-8.947,20-20S35.053,4,24,4z"></path><path fill="#4caf50" d="M44,24c0,11.044-8.956,20-20,20S4,35.044,4,24S12.956,4,24,4S44,12.956,44,24z"></path><path fill="#ffc107" d="M24,4v20l8,4l-8.843,16c0.317,0,0.526,0,0.843,0c11.053,0,20-8.947,20-20S35.053,4,24,4z"></path><path fill="#f44336" d="M41.84,15H24v13l-3-1L7.16,13.26H7.14C10.68,7.69,16.91,4,24,4C31.8,4,38.55,8.48,41.84,15z"></path><path fill="#dd2c00" d="M7.158,13.264l8.843,14.862L21,27L7.158,13.264z"></path><path fill="#558b2f" d="M23.157,44l8.934-16.059L28,25L23.157,44z"></path><path fill="#f9a825" d="M41.865,15H24l-1.579,4.58L41.865,15z"></path><path fill="#fff" d="M33,24c0,4.969-4.031,9-9,9s-9-4.031-9-9s4.031-9,9-9S33,19.031,33,24z"></path><path fill="#2196f3" d="M31,24c0,3.867-3.133,7-7,7s-7-3.133-7-7s3.133-7,7-7S31,20.133,31,24z"></path>
+                  </svg>
+                </span>
+                Add to Chrome
+              </Link>
+              <div className="mt-2 text-base text-gray-800 dark:text-gray-200 text-center">
+                Also available for
+                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Chrome</Link>,
+                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Edge</Link>,
+                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Opera</Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer className="bg-gray-50 dark:bg-gray-800 py-8 sm:py-12">
+          <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+            <div className="text-center text-gray-600 dark:text-gray-300 text-sm sm:text-base">
+              <p>© 2024 Quick Noter. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
