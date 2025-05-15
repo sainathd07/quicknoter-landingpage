@@ -8,7 +8,7 @@ export default function Home() {
       <Navigation />
       <main className="min-h-screen bg-white dark:bg-gray-900">
         {/* Hero Section */}
-        <section className="relative flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 sm:pt-32 pb-8 sm:pb-12">
+        <section className="relative flex flex-col items-center justify-center px-4 sm:px-6 lg:px-2 pt-20 sm:pt-32 pb-8 sm:pb-12">
           <div className="max-w-7xl mx-auto w-full text-center">
             <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-6 leading-tight">
               Quick Noter
@@ -19,7 +19,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col items-center gap-2 mt-8">
               <Link 
-                href="#"
+                href="https://chromewebstore.google.com/detail/quick-noter/bnkpplgnfkpbccekholmglpolocanijk"
                 className="flex items-center gap-3 px-10 py-4 bg-black text-white text-lg font-semibold rounded-full shadow-lg hover:bg-gray-900 transition-colors"
                 style={{ minWidth: 280, justifyContent: 'center' }}
               >
@@ -31,12 +31,6 @@ export default function Home() {
                 </span>
                 Add to Chrome
               </Link>
-              <div className="mt-2 text-base text-gray-800 dark:text-gray-200 text-center">
-                Also available for
-                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Chrome</Link>,
-                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Edge</Link>,
-                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Opera</Link>
-              </div>
             </div>
             {/* Enhanced Screenshot Mockup */}
             <div className="flex justify-center mt-10 sm:mt-16 w-full">
@@ -100,7 +94,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col items-center gap-2">
               <Link 
-                href="#"
+                href="https://chromewebstore.google.com/detail/quick-noter/bnkpplgnfkpbccekholmglpolocanijk"
                 className="flex items-center gap-3 px-10 py-4 bg-black text-white text-lg font-semibold rounded-full shadow-lg hover:bg-gray-900 transition-colors"
                 style={{ minWidth: 280, justifyContent: 'center' }}
               >
@@ -112,12 +106,6 @@ export default function Home() {
                 </span>
                 Add to Chrome
               </Link>
-              <div className="mt-2 text-base text-gray-800 dark:text-gray-200 text-center">
-                Also available for
-                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Chrome</Link>,
-                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Edge</Link>,
-                <Link href="#" className="font-bold underline ml-1 hover:text-blue-600">Opera</Link>
-              </div>
             </div>
           </div>
         </section>
